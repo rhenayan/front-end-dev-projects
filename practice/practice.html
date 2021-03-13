@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<style>
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.hide {
+    margin-top: 700px;
+    opacity:0;
+    transform: translateY(50px);
+  
+    transition: all .7s ease;
+    font-size:1rem;
+   
+}
+
+.show {
+   
+    opacity: 1;
+    transform: translateY(0px);
+  
+}
+
+
+
+
+</style>
+<body>
+    
+<div class="wrapper">
+
+    <h1 class="hide extra extra1">HEADING</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat sequi, temporibus repellat quibusdam sapiente nemo necessitatibus fuga itaque quia voluptate?</p>
+   
+
+
+    <h1 class="hide extra extra1">HEADING</h1>
+    <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat sequi, temporibus repellat quibusdam sapiente nemo necessitatibus fuga itaque quia voluptate?</p>
+
+
+    <h1 class="hide extra extra1">HEADING</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat sequi, temporibus repellat quibusdam sapiente nemo necessitatibus fuga itaque quia voluptate?</p>
+    
+</div>
+  
+
+
+
+
+
+
+<script>
+
+window.addEventListener('scroll',changeColor)
+function changeColor(){
+    let el=Array.from(document.querySelectorAll('.hide'));
+    console.log(el)
+
+    el.forEach(element => {
+
+        if(element.getBoundingClientRect().top < window.innerHeight){
+            element.classList.add('show');
+        } else{
+            element.classList.remove('show');
+        }
+        
+    
+    });
+
+}
+
+
+
+//     function showOnscroll(){
+//         let hideInit=document.querySelectorAll('.hide');
+//         
+
+
+//         for(let i=0; i < hideInit.length; i++) {
+//             if(initPosition < window.innerHeight) {
+//     hideInit.classList.add('show');
+// } else {
+//     hideInit.classList.remove('show');
+// }
+//         }
+        
+    
+          
+           
+
+      
+       
+//     }
+
+
+//     window.addEventListener('scroll',showOnscroll);
+
+</script>
+
+</body>
+</html>
+
+
